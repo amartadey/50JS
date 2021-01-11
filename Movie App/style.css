@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap");
+
 :root {
   --primary-color: #22254b;
   --secondary-color: #373b69;
@@ -65,6 +66,7 @@ main {
 }
 .movie-info h3 {
   margin: 0;
+  font-weight: 400;
 }
 
 .movie-info span {
@@ -96,6 +98,18 @@ main {
   transition: transform 0.3s ease-in;
   overflow-y: scroll;
 }
+.overview small {
+  color: orange;
+  background: var(--primary-color);
+  padding: 5px;
+  margin: 0 0 10px 0;
+  display: block;
+  text-align: center;
+}
+.overview h3 {
+  text-align: center;
+}
+
 .movie:hover .overview {
   transform: translateY(0);
 }
@@ -118,8 +132,45 @@ main {
   cursor: pointer;
   margin: 5px;
   border-radius: 3px;
+  display: none;
 }
 
 #pagination .page:active {
   transform: scale(0.9);
+}
+
+#pagination .page.active {
+  background-color: #fff;
+  color: var(--primary-color);
+  font-weight: 700;
+  display: flex;
+}
+#pagination .page:nth-child(1),
+#pagination .page:nth-child(2),
+#pagination .page:last-child,
+#pagination .page.active + .page,
+#pagination .page.active + .page + .page {
+  display: flex;
+}
+
+/* width */
+.overview::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.overview::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.overview::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 5px;
+  height: 50px;
+}
+
+/* Handle on hover */
+.overview::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
