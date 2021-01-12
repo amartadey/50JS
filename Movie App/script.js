@@ -851,7 +851,7 @@ function languageConvert(ln) {
   var arr = [];
   for (i in isoLangs) {
     if (i == ln) {
-      return isoLangs[i].name;
+      return isoLangs[i].name + " | " + isoLangs[i].nativeName;
     }
   }
 }
