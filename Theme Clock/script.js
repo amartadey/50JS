@@ -65,6 +65,12 @@ function setTime() {
     0,
     360
   )}deg)`;
+  if (seconds == 0) {
+    secondEl.style.transition = `all 0s linear`;
+  } else {
+    secondEl.style.transition = `all 0.5s ease-in`;
+  }
+
   secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(
     seconds,
     0,
